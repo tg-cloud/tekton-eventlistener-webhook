@@ -6,7 +6,7 @@
 # 애플리케이션 깃 레파지토리에 GitHub Actions Workflow, Github Webhook 구성 필요
     # - 테크톤 이벤트리스너를 트리거링
     # - 파이프라인을 구동
-    
+
 
 # GitHub Actions 워크플로우 이름 (대시보드나 실행 이력에서 표시됨)
 name: Trigger Tekton Eventlistener
@@ -33,8 +33,8 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{
               "repository": {
-                "clone_url": "https://github.com/les-o-o/tekton-test-springboot.git",
-                "name": "tekton-test-springboot"
+                "clone_url": "https://github.com/tg-cloud/tekton-eventlistener-webhook.git",
+                "name": "tekton-eventlistener-webhook"
               },
               "after": "main"
             }'
