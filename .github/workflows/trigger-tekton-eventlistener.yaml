@@ -1,0 +1,29 @@
+# Created_by: 이호형
+# Created_at: 20251015
+# GitHub Actions Workflow 파일
+
+# GitHub Actions 워크플로우 이름 (대시보드나 실행 이력에서 표시됨)
+name: Trigger Tekton Eventlistener
+
+# main 브랜치에 push가 발생할 때마다 이 워크플로우가 자동으로 실행
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: self-hosted   # Job이 self-hosted runner 위에서 실행되도록 함 -> 테크톤 도메인이 공인이 아니므로 셀프 호스팅이 필요
+    steps:
+      - name: Trigger Tekton EventListener
+      # 테크톤 이벤트리스너로 요청을 보내 파이프라인을 실행
+        run: |
+          curl -X POST http://ci-eventlistener.tg-cloud.co.kr/webhook \
+            -H "Content-Type: application/json" \
+            -d '{
+              "repository": {
+                "clone_url": "https://github.com/les-o-o/tekton-test-springboot.git",
+                "name": "tekton-test-springboot"
+              },
+              "after": "main"
+            }'
