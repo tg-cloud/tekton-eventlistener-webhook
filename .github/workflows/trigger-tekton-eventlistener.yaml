@@ -1,6 +1,12 @@
 # Created_by: 이호형
 # Created_at: 20251015
 # GitHub Actions Workflow 파일
+# 깃허브 웹훅 만으로는 공인IP로 노출되지 않는 tekton에 접근할 수 없으므로
+# 마스터 노드에 설치된 self-hosted runner가 job을 실행하도록
+# 애플리케이션 깃 레파지토리에 GitHub Actions Workflow, Github Webhook 구성 필요
+    # - 테크톤 이벤트리스너를 트리거링
+    # - 파이프라인을 구동
+    
 
 # GitHub Actions 워크플로우 이름 (대시보드나 실행 이력에서 표시됨)
 name: Trigger Tekton Eventlistener
@@ -11,6 +17,11 @@ on:
     branches:
       - main
 
+
+# 주요 필드 목록
+# - clone_url: <애플리케이션 깃 레포 url>,
+# - name: <레포명>
+# - after: <???>
 jobs:
   trigger:
     runs-on: self-hosted   # Job이 self-hosted runner 위에서 실행되도록 함 -> 테크톤 도메인이 공인이 아니므로 셀프 호스팅이 필요
