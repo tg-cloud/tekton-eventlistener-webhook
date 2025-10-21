@@ -49,7 +49,7 @@ jobs:
             -d '{
               "repo-url": "https://github.com/tg-cloud/tekton-eventlistener-webhook.git",
               "branch-name": "main",
-              "pipeline-name": "tks-manual-spring-boot-pipeline-test"
+              "pipeline-name": "tks-manual-spring-boot-pipeline-pvc"
             }'
 
 
