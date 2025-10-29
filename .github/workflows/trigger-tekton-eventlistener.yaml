@@ -47,10 +47,19 @@ jobs:
           curl -X POST http://ci-eventlistener.tg-cloud.co.kr/webhook/generic \
             -H "Content-Type: application/json" \
             -d '{
-              "repo-url": "https://github.com/tg-cloud/prometheus-backend.git",
+              "repo-url": "https://github.com/tg-cloud/tekton-eventlistener-webhook.git",
               "branch-name": "main",
               "pipeline-name": "tks-manual-spring-boot-pipeline-pvc"
             }'
-  
+      - name: Trigger Tekton EventListener-user1-cluster
+      # 테크톤 이벤트리스너로 요청을 보내 파이프라인을 실행
+        run: |
+          curl -X POST http://ci-eventlistener-user1.tg-cloud.co.kr/webhook/generic \
+            -H "Content-Type: application/json" \
+            -d '{
+              "repo-url": "https://github.com/tg-cloud/tekton-eventlistener-webhook.git",
+              "branch-name": "main",
+              "pipeline-name": "tks-manual-spring-boot-pipeline-pvc"
+            }'
 
 
