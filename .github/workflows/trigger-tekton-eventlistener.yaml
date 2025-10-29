@@ -47,7 +47,7 @@ jobs:
           curl -X POST http://ci-eventlistener.tg-cloud.co.kr/webhook/generic \
             -H "Content-Type: application/json" \
             -d '{
-              "repo-url": "https://github.com/tg-cloud/prometheus-backend.git",
+              "repo-url": "https://github.com/tg-cloud/tks-workload-api.git",
               "branch-name": "main",
               "pipeline-name": "tks-manual-spring-boot-pipeline-pvc"
             }'
