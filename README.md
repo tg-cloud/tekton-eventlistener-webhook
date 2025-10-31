@@ -2,7 +2,7 @@
 # TEST UPDATE $(date)ㄹㄷㄹㄷ
 # yuoㄹㄷㄹㄷㄹㅎㄷㄹㄷㄹㄷㄹㄷ
 # dkㄹㄷㄹㄷgeggegeg
-# zㄹㄷㅈㄹㄷㄹㄷㄹㄹㄷㄹㄷ
+# zㄹㄷㅈㄹㄷㄹㄹㄷㄹㄷㄷㄹㄹㄷㄹㄷ
 # 테스트ㄹㄷㄹㄷㄹㄷㄹㄷ
 # 테스트fefefefef
 # 테스트fewfefefeffewfe
