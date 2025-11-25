@@ -15,7 +15,7 @@ jobs:
           curl -X POST http://ci-eventlistener.tg-cloud.co.kr/webhook/generic \
             -H "Content-Type: application/json" \
             -d '{
-              "repo-url": "https://github.com/tg-cloud/tekton-eventlistener-webhook",
+              "repo-url": "https://github.com/tg-cloud/tekton-eventlistener-webhook.git",
               "branch-name": "main",
               "pipeline-name": "sample"
             }'
