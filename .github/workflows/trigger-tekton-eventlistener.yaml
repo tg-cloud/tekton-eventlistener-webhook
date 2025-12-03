@@ -41,7 +41,11 @@ jobs:
   trigger:
     runs-on: self-hosted   # Job이 self-hosted runner 위에서 실행되도록 함 -> 테크톤 도메인이 공인이 아니므로 셀프 호스팅이 필요
     steps:
+      - name: Get build number
+        id: build_info
+        run: echo "BUILD_NUM=${{ github.run_number }}" >> $GITHUB_OUTPUT
       - name: Trigger Tekton EventListener
+      
       # 테크톤 이벤트리스너로 요청을 보내 파이프라인을 실행
         run: |
           curl -X POST http://ci-eventlistener.tg-cloud.co.kr/webhook/generic \
@@ -60,7 +64,7 @@ jobs:
               "repo-url": "https://github.com/tg-cloud/tekton-eventlistener-webhook.git",
               "branch-name": "main",
               "pipeline-name": "tks-manual-spring-boot-pipeline",
-              "build-number": "${{ github.run_number }}"
+              "build-number": "${{ steps.build_info.outputs.BUILD_NUM }}"
             }'
 
 
